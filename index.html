@@ -7,18 +7,31 @@
     <meta name="description" content="Hello, I'm Minyoung Kim. This is my resume. Thank you." />
     <title>Minyoung Kim - Resume</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.scss" />
   </head>
   <body class="font-sans antialiased w-full">
-    <div class="container mx-auto max-w-screen-xl">
+    <label for="teal-toggle" class="inline-flex absolute top-5 right-5 items-center cursor-pointer">
+      <input type="checkbox" value="" id="teal-toggle" class="sr-only peer" />
+      <div
+        class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-focus:ring-4 peer-focus:ring-teal-300 dark:peer-focus:ring-teal-800 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-teal-600"
+      ></div>
+      <span class="toggleText ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">KOR</span>
+    </label>
+    <div id="containerKorean" class="container mx-auto max-w-screen-xl">
       <main id="wrapper" class="sm:flex-row sm:flex-row-reverse sm:m-12 shadow-2xl">
         <div id="contactBar" class="sm:flex sm:flex-row sm:justify-evenly w-full p-12">
-          <div class="flex flex-col px-5 py-10">
+          <div id="nameKorean" class="flex flex-col px-5 py-10 allToggles">
             <img src="./src/img/profileImg.jpeg" alt="Profile Picture" class="rounded-full mx-auto mb-6 w-48" />
-            <h1 class="text-center text-3xl font-semibold mb-2">Minyoung Kim</h1>
+            <h1 id="nameKorean" class="text-center text-3xl font-semibold mb-2">김 민 영</h1>
+            <h2 class="text-center text-xl font-light">프론트엔드 엔지니어</h2>
+          </div>
+          <div id="nameEnglish" class="flex flex-col px-5 py-10 hidden allToggles">
+            <img src="./src/img/profileImg.jpeg" alt="Profile Picture" class="rounded-full mx-auto mb-6 w-48" />
+            <h1 id="nameKorean" class="text-center text-3xl font-semibold mb-2">Minyoung Kim</h1>
             <h2 class="text-center text-xl font-light">Front-End Developer</h2>
           </div>
-          <div id="profile" class="prose px-5 py-10">
-            <h2 class="text-2xl mb-10 font-bold text-teal-500">Introduce</h2>
+          <div id="profileKorean" class="prose px-5 py-10 allToggles">
+            <h2 class="text-2xl mb-10 font-bold text-teal-500">소개말</h2>
             <p class="mb-3 font-semibold text-slate-700">안녕하세요,</p>
             <p class="mb-3 font-semibold text-slate-700">
               웹접근성에 대해 이해하고 커뮤니케이션과 협업 컨벤션을 준수하는 프론트엔드 개발자 김민영입니다.
@@ -37,7 +50,7 @@
         </div>
         <div class="box-border content w-full p-12">
           <div id="profile" class="prose w-full">
-            <h2 class="text-2xl mb-5 font-bold mb-10 text-teal-500">Contact</h2>
+            <h2 id="contactKorean" class="text-2xl mb-5 font-bold mb-10 text-teal-500">연락처</h2>
             <div class="box-border sm:flex justify-evenly">
               <div class="flex items-center">
                 <ion-icon class="inline w-4 mr-2 text-slate-700" name="mail-outline"></ion-icon>
@@ -93,11 +106,11 @@
           </div>
           <hr class="mt-8 mb-12" />
           <div class="pros mb-20 text-slate-700">
-            <h2 class="section-headline font-bold text-2xl mb-10 text-teal-500">Project</h2>
+            <h2 id="projectKorean" class="section-headline font-bold text-2xl mb-10 text-teal-500">프로젝트</h2>
             <div>
               <h3 class="font-bold text-2xl mb-10 text-black">
                 <a class="hover:text-teal-500" href="https://github.com/Rolling-Paper-Project/Rolling-Page"
-                  >롤링페이지 (Team Project)</a
+                  >롤링페이지 (팀 프로젝트)</a
                 >
               </h3>
               <section class="mb-6">
@@ -105,7 +118,7 @@
                 <div class="lg:inline-block lg:w-8/12 w-full">프론트엔드 개발 참여</div>
               </section>
               <section class="mb-6">
-                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">Task:</div>
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">업무:</div>
                 <div class="lg:inline-block lg:w-8/12 w-full">
                   <p class="mb-2">롤링페이퍼에서 아이디어를 착안해 온라인 형식의 롤링페이퍼 페이지 제작</p>
                   <p class="mb-2">리액트와 타입스크립트를 이용해 제작</p>
@@ -131,7 +144,7 @@
             <div>
               <h3 class="font-bold text-2xl mb-10 text-black">
                 <a class="hover:text-teal-500" href="https://github.com/secondlinefirefist/caffeineMarket"
-                  >카페인마켓 (Team Project)</a
+                  >카페인마켓 (팀 프로젝트)</a
                 >
               </h3>
               <section class="mb-6">
@@ -564,10 +577,577 @@
         </div>
       </main>
     </div>
+    <div id="containerEnglish" class="container mx-auto max-w-screen-xl hidden">
+      <main id="wrapper" class="sm:flex-row sm:flex-row-reverse sm:m-12 shadow-2xl">
+        <div id="contactBar" class="sm:flex sm:flex-row sm:justify-evenly w-full p-12">
+          <div id="nameEnglish" class="flex flex-col px-5 py-10">
+            <img src="./src/img/profileImg.jpeg" alt="Profile Picture" class="rounded-full mx-auto mb-6 w-48" />
+            <h1 id="nameKorean" class="text-center text-3xl font-semibold mb-2">Minyoung Kim</h1>
+            <h2 class="text-center text-xl font-light">Front-End Developer</h2>
+          </div>
+          <!-- english -->
+          <div id="profileEnglish" class="prose px-5 py-10">
+            <h2 class="text-2xl mb-10 font-bold text-teal-500">Introduce</h2>
+            <p class="mb-3 font-semibold text-slate-700">
+              Hello, My name is Minyoung Kim, a front-end developer who understands
+            </p>
+            <p class="mb-3 font-semibold text-slate-700">
+              web accessibility and complies with communication and collaboration conventions.
+            </p>
+            <p class="mb-3 font-semibold text-slate-700">
+              likes a culture that shares knowledge and interest in growing up together.
+            </p>
+            <p class="mb-3 font-semibold text-slate-700">
+              know the importance of consistency. Writing about development learning on my blog.
+            </p>
+            <p class="mb-3 font-semibold text-slate-700">
+              In order to have the necessary capabilities for practice, have a high understanding
+            </p>
+            <p class="mb-3 font-semibold text-slate-700">
+              of issue management and branch strategies through collaboration tools.
+            </p>
+            <p class="mb-3 font-semibold text-slate-700">Always think and learn to implement clean code.</p>
+          </div>
+          <!-- english -->
+        </div>
+        <div class="box-border content w-full p-12">
+          <div id="profile" class="prose w-full">
+            <h2 id="contactEnglish" class="text-2xl mb-5 font-bold mb-10 text-teal-500">Contact</h2>
+            <div class="box-border sm:flex justify-evenly">
+              <div class="flex items-center">
+                <ion-icon class="inline w-4 mr-2 text-slate-700" name="mail-outline"></ion-icon>
+                <a class="hover:text-teal-500" href="mailto:minyoungforcontact@gmail.com"
+                  >minyoungforcontact@gmail.com</a
+                >
+              </div>
+              <div class="flex items-center">
+                <ion-icon class="inline w-4 mr-2 text-slate-700" name="call-outline"></ion-icon>
+                <a class="hover:text-teal-500" href="tel:+821029421924">010 2942 1924</a>
+              </div>
+              <div class="flex items-center">
+                <ion-icon class="inline w-4 mr-2 text-slate-700" name="logo-github"></ion-icon>
+                <a
+                  class="hover:text-teal-500"
+                  href="https://github.com/BradleyyKim"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GitHub</a
+                >
+              </div>
+              <div class="flex items-center">
+                <ion-icon class="inline w-4 mr-2 text-slate-700" name="logo-linkedin"></ion-icon>
+                <a
+                  class="hover:text-teal-500"
+                  href="https://www.linkedin.com/in/minyoung-kim-fe/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >LinkedIn</a
+                >
+              </div>
+              <div class="flex items-center">
+                <img src="src/img/velog.png" class="inline w-4 mr-2 text-slate-700" alt="Velog Logo" />
+                <a
+                  class="hover:text-teal-500"
+                  href="https://velog.io/@minyoungdumb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Velog</a
+                >
+              </div>
+              <div class="flex items-center">
+                <img src="./src/img/notion.png" class="inline w-4 mr-2 text-slate-700" alt="Notion Logo" />
+                <a
+                  class="hover:text-teal-500"
+                  href="https://brook-cacao-c00.notion.site/Minyoung-Kim-f0ed6b5f761144d4b39917b759a7a6c0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Notion</a
+                >
+              </div>
+            </div>
+          </div>
+          <hr class="mt-8 mb-12" />
+          <div class="pros mb-20 text-slate-700">
+            <h2 id="projectEnglish" class="section-headline font-bold text-2xl mb-10 text-teal-500">Project</h2>
+            <div>
+              <h3 class="font-bold text-2xl mb-10 text-black">
+                <a class="hover:text-teal-500" href="https://github.com/Rolling-Paper-Project/Rolling-Page"
+                  >Rolling-Page (Team Project)</a
+                >
+              </h3>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top mb-2">August. 2022 - &#40;ing&#41;</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">Front-End Development</div>
+              </section>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">Task:</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <p class="mb-2">
+                    Creating a rolling paper page in an online format based on ideas from rolling paper
+                  </p>
+                  <p class="mb-2">Produced using React and TypeScript</p>
+                  <p class="mb-2">Using Styled Component</p>
+                  <p class="mb-2">Implement data request functionality using API server</p>
+                  <p class="mb-2">Manage branches with understanding git-flow strategy</p>
+                  <p class="mb-2">Implement Create and delete posts functionality</p>
+                </div>
+              </section>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">Tools:</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <span class="rounded-xl bg-teal-300 px-3">TypeScript</span>
+                  <span class="rounded-xl bg-teal-300 px-3">React.js</span>
+                  <span class="rounded-xl bg-teal-300 px-3">JavaScript</span>
+                  <!-- <span class="rounded-xl bg-teal-300 px-3">Redux</span> -->
+                  <span class="rounded-xl bg-teal-300 px-3">Git</span>
+                  <span class="rounded-xl bg-teal-300 px-3">Github</span>
+                  <span class="rounded-xl bg-teal-300 px-3">Discord</span>
+                </div>
+              </section>
+            </div>
+            <div>
+              <h3 class="font-bold text-2xl mb-10 text-black">
+                <a class="hover:text-teal-500" href="https://github.com/secondlinefirefist/caffeineMarket"
+                  >Caffeine Market (Team Project)</a
+                >
+              </h3>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top mb-2">July.2022 - &#40;ing&#41;</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">Front-End Development</div>
+              </section>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">Task:</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <p class="mb-2">
+                    Create code considering web accessibility, organize responsive layout considering user UI and UX
+                  </p>
+                  <p class="mb-2">Implement data request functionality using API server</p>
+                  <p class="mb-2">Implement recommended search term functionality</p>
+                  <p class="mb-2">로그인 연동 및 토큰 사용으로 개인별 데이터 추출 기능 구현</p>
+                  <p class="mb-2">피드 작성 및 프로필 업데이트 기능 구현</p>
+                  <p class="mb-2">팔로우 및 게시물 알림 기능 구현</p>
+                  <p class="mb-2">Websocket을 이용해 실시간 채팅 기능 구현 예정</p>
+                  <a
+                    href="https://velog.io/@minyoungdumb/%EC%A3%BC%EB%8B%88%EC%96%B4%EC%9D%98-JIRA%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%98%91%EC%97%85%ED%95%98%EA%B8%B0"
+                    target="_blank"
+                    class="mb-2 italic hover:text-teal-500"
+                    >Jira, Slack 등 협업 툴을 이용해 팀원들과 실무 형태의 작업 환경 구현</a
+                  >
+                </div>
+              </section>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">Tools:</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <span class="rounded-xl bg-teal-300 px-3">JavaScript</span>
+                  <!-- <span class="rounded-xl bg-teal-300 px-3">Redux</span> -->
+                  <span class="rounded-xl bg-teal-300 px-3">Git</span>
+                  <span class="rounded-xl bg-teal-300 px-3">Github</span>
+                  <span class="rounded-xl bg-teal-300 px-3">Figma</span>
+                  <span class="rounded-xl bg-teal-300 px-3">Jira</span>
+                  <span class="rounded-xl bg-teal-300 px-3">Slack</span>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="pros mb-20 text-slate-700">
+            <div>
+              <h3 class="font-bold text-2xl mb-10 text-black">
+                <a href="https://github.com/BradleyyKim/sideProjects" class="hover:text-teal-500"
+                  >Vanilla JS Side Projects</a
+                >
+              </h3>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top mb-2">2022년 5월 - &#40;진행중&#41;</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">바닐라 자바스크립트를 이용한 사이드 프로젝트 제작</div>
+              </section>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">Task:</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <p class="mb-2">CRUD 구현 (로그인, 자판기, 할 일 목록 등)</p>
+                  <p class="mb-2">HTML, CSS를 이용해 다양한 UI, UX 구현(타임라인 등)</p>
+                  <p class="mb-2">컴포넌트별 기능 구현(Drag & Drop)</p>
+                  <p class="mb-2">다양한 메서드 활용 기능 구현(stopwatch 등)</p>
+                </div>
+              </section>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">Tools:</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <span class="rounded-xl bg-teal-300 px-3">JavaScript</span>
+                  <span class="rounded-xl bg-teal-300 px-3">Sass</span>
+                  <span class="rounded-xl bg-teal-300 px-3">Git</span>
+                  <span class="rounded-xl bg-teal-300 px-3">github</span>
+                </div>
+              </section>
+            </div>
+          </div>
+          <!-- <div class="pros mb-20 text-slate-700">
+            <div>
+              <h3 class="font-bold text-2xl mb-10 text-black">
+                <a href="https://github.com/BradleyyKim/vendingMachine" class="hover:text-teal-500" target="_blank"
+                  >콜라 자판기 제작</a
+                >
+              </h3>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">May.&nbsp;2022:</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">Vanilla JavaScript를 이용해 DOM을 활용</div>
+              </section>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">Task:</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <p class="mb-2">원하는 음료를 원하는 수량만큼 추출하는 기능 구현</p>
+                  <p class="mb-2">수량 추가, 제거, 금액에 따른 결과 추출 알고리즘 구현</p>
+                </div>
+              </section>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">Tools:</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <span class="rounded-xl bg-teal-300 px-3">Vanilla</span>
+                  <span class="rounded-xl bg-teal-300 px-3">Git</span>
+                  <span class="rounded-xl bg-teal-300 px-3">Github</span>
+                </div>
+              </section>
+            </div>
+          </div> -->
+          <!-- <div class="pros mb-20 text-slate-700">
+            <div>
+              <h3 class="font-bold text-2xl mb-10 text-black">
+                <a href="https://musinsa.netlify.app" class="hover:text-teal-500" target="_blank"
+                  >NUSINSA, aircnc 페이지만들기</a
+                >
+              </h3>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">May.&nbsp;2022:</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">React를 이용해 기존 퍼블리싱 페이지를 리팩토링</div>
+              </section>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">Task:</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <p class="mb-2">React를 사용해 SPA 로그인 페이지, 회원가입, CRUD 기능 구현</p>
+                  <p class="mb-2">웹접근성, UI, UX를 고려한 레이아웃 구성</p>
+                  <p class="mb-2">Express를 활용해 백엔드 구성</p>
+                  <p class="mb-2">RESTful API와 GraphQL 사용</p>
+                </div>
+              </section>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">Tools:</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <span class="rounded-xl bg-teal-300 px-3">React</span>
+                  <span class="rounded-xl bg-teal-300 px-3">Redux</span>
+                  <span class="rounded-xl bg-teal-300 px-3">Express</span>
+                  <span class="rounded-xl bg-teal-300 px-3">Git</span>
+                  <span class="rounded-xl bg-teal-300 px-3">Gitbucket</span>
+                  <span class="rounded-xl bg-teal-300 px-3">JIRA</span>
+                  <span class="rounded-xl bg-teal-300 px-3">Babel</span>
+                </div>
+              </section>
+            </div>
+          </div> -->
+          <!-- <div class="pros mb-20 text-slate-700">
+            <div>
+              <h3 class="font-bold text-2xl mb-10 text-black">
+                <a href="https://allmybooks.netlify.app" class="hover:text-teal-500" target="_blank"
+                  >Allmybooks (자체제작 앱)</a
+                >
+              </h3>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">May.&nbsp;2022:</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">디자인, UI/UX. 구조설계</div>
+              </section>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">Task:</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <p class="mb-2">React 로그인 페이지, 회원가입, CRUD 기능 구현</p>
+                  <p class="mb-2">웹접근성, UI, UX를 고려한 레이아웃 구성</p>
+                  <p class="mb-2">Express를 활용해 백엔드 구성</p>
+                </div>
+              </section>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">Tools:</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <span class="rounded-xl bg-teal-300 px-3">React</span>
+                  <span class="rounded-xl bg-teal-300 px-3">Redux</span>
+                  <span class="rounded-xl bg-teal-300 px-3">Express</span>
+                  <span class="rounded-xl bg-teal-300 px-3">Git</span>
+                  <span class="rounded-xl bg-teal-300 px-3">Gitbucket</span>
+                  <span class="rounded-xl bg-teal-300 px-3">JIRA</span>
+                  <span class="rounded-xl bg-teal-300 px-3">Babel</span>
+                  <span class="rounded-xl bg-teal-300 px-3">Webpack</span>
+                </div>
+              </section>
+            </div>
+          </div> -->
+          <!-- skills -->
+          <hr class="mt-8 mb-12" />
+          <div class="pros mb-20 text-slate-700">
+            <h2 class="section-headline font-bold text-2xl mb-10 text-teal-500">Skills</h2>
+            <div>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top font-bold mb-2">ES6 JavaScript</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <a
+                    href="https://velog.io/@minyoungdumb/JS-%EB%8F%99%EA%B8%B0-%EB%B9%84%EB%8F%99%EA%B8%B0"
+                    target="_blank"
+                    class="mb-2 italic hover:text-teal-500"
+                    >비동기에 대한 이해</a
+                  >
+                  <p class="mb-2">데이터타입과 DOM에 대한 이해</p>
+                  <p class="mb-2">this와 콜백에 대한 이해</p>
+                  <p class="mb-2">클로저, 프로토타입, 클래스에 대한 이해</p>
+                </div>
+              </section>
+            </div>
+            <div>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top font-bold mb-2">TypeScript</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <p class="mb-2">출판 경험을 통해 기본 개념에 대한 이해 (인터페이스, 함수, 클래스, 제네릭 등)</p>
+                  <p class="mb-2">JavaScript와 migration 가능</p>
+                  <p class="mb-2">React, Webpack을 함께 활용한 프로젝트 경험</p>
+                </div>
+              </section>
+            </div>
+            <div>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top font-bold mb-2">React</div>
+                <!-- / Redux / Next.js -->
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <p class="mb-2">Props, Hooks 등 필수 기능에 대한 이해</p>
+                  <p class="mb-2">상태관리에 대한 이해</p>
+                  <p class="mb-2">SSR을 통해 SEO 최적화 경험</p>
+                </div>
+              </section>
+            </div>
+            <div>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top font-bold mb-2">HTML / CSS / SCSS</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <p class="mb-2">HTML, CSS 를 웹접근성, 확장성을 고려하여 설계 가능</p>
+                  <p class="mb-2">Mixin, variable 등의 활용으로 SCSS 실무 사용가능</p>
+                </div>
+              </section>
+            </div>
+            <div>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top font-bold mb-2">Node.js / firebase</div>
+                <!-- express / -->
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <p class="mb-2">npm 환경에 대한 이해</p>
+                  <!-- <p class="mb-2">미들웨어에 대한 이해</p> -->
+                  <p class="mb-2">firebase todolist 사용경험</p>
+                </div>
+              </section>
+            </div>
+            <div>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top font-bold mb-2">Git / Github / JIRA</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <p class="mb-2">실무에 필요한 git CLI 사용가능</p>
+                  <p class="mb-2">Github 레포지토리의 PR, Issue, Project 등의 기능을 사용해 협업가능</p>
+                  <p class="mb-2">JIRA를 활용한 이슈 추적, 프로젝트 관리가 가능</p>
+                </div>
+              </section>
+            </div>
+            <div>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top font-bold mb-2">Babel / Webpack</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <p class="mb-2">데컴파일 관련 실무 사용 가능</p>
+                  <p class="mb-2">모듈링과 번들링에 대한 이해 및 실무 사용 가능</p>
+                  <p class="mb-2">JS, React, TS 환경 구성 가능</p>
+                </div>
+              </section>
+            </div>
+            <div>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top font-bold mb-2">Framwork / Library</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <p class="mb-2">jQuery 실무 사용 가능</p>
+                  <p class="mb-2">Tailwind, BootStrap 실무 사용 가능</p>
+                  <!-- <p class="mb-2">three.js D3.js 토이프로젝트 경험</p> -->
+                </div>
+              </section>
+            </div>
+          </div>
+          <!-- Activity -->
+          <hr class="mt-8 mb-12" />
+          <div class="pros mb-20 text-slate-700">
+            <h2 class="section-headline font-bold text-2xl mb-10 text-teal-500">Activity</h2>
+            <div>
+              <h3 class="font-bold text-2xl mb-10 text-black">
+                <a
+                  href="https://ridibooks.com/books/2773000059?_s=search&_q=%EC%95%8C%EC%9E%98%EB%94%B1%EA%B9%94%EC%84%BC&_rdt_sid=search&_rdt_idx=0"
+                  target="_blank"
+                  class="hover:text-teal-500"
+                  >"알잘딱깔센 JavaScript 비동기 프로그래밍 - 비동기 너 내 동기가 돼라" 도서 출판</a
+                >
+              </h3>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">Aug.&nbsp;2022:</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">비동기와 관련된 내용들을 정리한 도서를 공동 집필</div>
+              </section>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">Task:</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <p class="mb-2">fetch를 이용한 API 실습에 관한 내용 담당 집필</p>
+                  <p class="mb-2">JavaScript에서 비동기 프로그래밍 동작에 대한 이해도 증가</p>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="pros mb-20 text-slate-700">
+            <div>
+              <h3 class="font-bold text-2xl mb-10 text-black">
+                <a
+                  href="https://velog.io/@minyoungdumb/TypeScript-%EB%8F%84%EC%84%9C-%EC%B6%9C%ED%8C%90-%ED%9A%8C%EA%B3%A0"
+                  target="_blank"
+                  class="hover:text-teal-500"
+                  >2022 Jeju Web Conference 연사 참여</a
+                >
+              </h3>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">Jun.&nbsp;2022:</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  "스크립트에 타입을 더하다 TypeScript Basic" 를 주제로 연사 진행
+                </div>
+              </section>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">Task:</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <p class="mb-2">TypeScript를 처음 배우는 사람들을 위한 길잡이 및 향후 방향성에 관한 내용</p>
+                  <p class="mb-2">YOUTUBE에 영상 업로드</p>
+                  <p class="mb-2">제주코딩 베이스캠프 유튜브 페이지에 기고</p>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="pros mb-20 text-slate-700">
+            <div>
+              <h3 class="font-bold text-2xl mb-10 text-black">
+                <a
+                  href="https://ridibooks.com/books/2773000057?_s=search&_q=%EC%95%8C%EC%95%84%EC%84%9C+%EC%9E%98+%EB%94%B1&_rdt_sid=search&_rdt_idx=0"
+                  target="_blank"
+                  class="hover:text-teal-500"
+                  >"알아서 잘 딱 깔끔하고 센스있게 정리하는 TypeScript 핵심개념" 도서 출판</a
+                >
+              </h3>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">2022년 6월</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  "알아서 잘 딱 깔끔하고 센스있게 TypeScript Basic" 공동 저자
+                </div>
+              </section>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">Task:</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <p class="mb-2">Generic Part 담당</p>
+                  <p class="mb-2">Best Practice&#40;모범사례 위주&#41; 개념 및 예제 원고 작성</p>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="pros mb-20 text-slate-700">
+            <div>
+              <h3 class="font-bold text-2xl mb-10 text-black hover:text-teal-500">
+                <a href="https://github.com/javascript-tutorial/ko.javascript.info/pulls" target="_blank"
+                  >모던자바스크립트 튜토리얼 Open Source Contribution</a
+                >
+              </h3>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">2022년 6월</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">Javascript 메서드, 클래스 페이지 번역, 내용 수정</div>
+              </section>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">Task:</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <p class="mb-2">클래스와 인스턴스에 대한 part 제작</p>
+                  <p class="mb-2">상황에 따른 this 사용에 대한 part 협력 제작</p>
+                  <p class="mb-2">클로저 활용 사례 조사</p>
+                </div>
+              </section>
+            </div>
+          </div>
+          <!-- Experience -->
+          <hr class="mt-8 mb-12" />
+          <div class="pros mb-20 text-slate-700">
+            <h2 class="section-headline font-bold text-2xl mb-10 text-teal-500">Experience</h2>
+            <div>
+              <h3 class="font-bold text-2xl mb-10 text-black">
+                <a href="https://brunch.co.kr/@likelion/40" target="_blank" class="hover:text-teal-500"
+                  >멋쟁이 사자처럼 프론트엔드 스쿨 2기 수료</a
+                >
+              </h3>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">2022.03 ~ 2022.08 (5개월)</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <p class="mb-2">제주코딩베이스캠프 와 프론트엔드 개발자가 갖추어야 할 역량 학습</p>
+                  <p class="mb-2">HTML, CSS, JavaScript, React, Firebase, NodeJS, Ajax 등 학습</p>
+                  <p class="mb-2">각 분야의 전문가분들의 특강을 통해 기본의 중요성과 깊은 학습 고찰</p>
+                  <p class="mb-2">Tailwind CSS 이력서 경진대회 대상 수상</p>
+                </div>
+              </section>
+            </div>
+            <div>
+              <h3 class="font-bold text-2xl mb-10 text-black">
+                <a
+                  href="https://greenart.co.kr/curriculum/curriculum_detail?idx=12045"
+                  target="_blank"
+                  class="hover:text-teal-500"
+                  >반응형 웹 디자인(웹 퍼블리셔)양성과정</a
+                >
+              </h3>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">2020.12 ~ 2021.06 (5개월)</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <p class="mb-2">사용자경험과 니즈를 분석하여 정보설계, UI설계, 화면설계</p>
+                  <p class="mb-2">프로토타입을 제작하고 사용성테스트를 진행, 디자인 구성요소를 설계하고 제작</p>
+                  <p class="mb-2">서비스 경험디자인을 위해 관찰조사 및 시나리오 개발</p>
+                  <p class="mb-2">HTML, CSS, JQuery에 대한 학습 및 세 가지를 이용한 페이지 제작</p>
+                </div>
+              </section>
+            </div>
+            <div>
+              <h3 class="font-bold text-2xl mb-10 text-black">
+                <p>Yesnow (강남구 역삼동, 서울특별시)</p>
+              </h3>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">2021.09 ~ 2021.12 (3개월)</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <p class="mb-2">빅데이터와 인공지능을 이용한 사이즈 측정 앱 "핏파인더" 서비스 상용화</p>
+                  <p class="mb-2">핏테크3.0 기반의 패션테크기업에서 B2B 영업마케팅팀에서 근무</p>
+                  <p class="mb-2">소비자의 니즈를 분석하고 시장의 방향성에 대해 탐구.</p>
+                  <p class="mb-2">서비스 파이프라인을 제작 후 쇼핑몰과 직접 계약.</p>
+                  <p class="mb-2">고객(유저)와의 커뮤니케이션을 통해 니즈를 파악하고 니즈의 중요성을 이해</p>
+                  <p class="mb-2">50억 규모의 멀티몰과 직접 계약한 경험</p>
+                  <p class="mb-2">린스타트업에 대해 이해하고 BML 프로세스에 대한 깊은 탐구</p>
+                </div>
+              </section>
+            </div>
+            <div>
+              <h3 class="font-bold text-2xl mb-10 text-black">
+                <p>FineTechWin.Inc (Dallas, TX, USA)</p>
+              </h3>
+              <section class="mb-6">
+                <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">2019.02 ~ 2020.02 (12개월)</div>
+                <div class="lg:inline-block lg:w-8/12 w-full">
+                  <p class="mb-2">
+                    자재 관리 업무 책임자(Supervisor)로 근무(자재 관리, 생산 지원, 유통, 조달, 불량교환, 적재 등)
+                  </p>
+                  <p class="mb-2">Samsung Electronics America 생산팀과 물류업체(Geodis)와 협업 근무.</p>
+                  <p class="mb-2">Samsung 본사 직원과 출장 경험을 통한 억대 규모 이슈 해결</p>
+                  <p class="mb-2">영어 이메일 커뮤니케이션 능력 및 직원들과 영어 커뮤니케이션 능력</p>
+                  <p class="mb-2">업무에 필요한 엑셀 활용, 물류 시스템 (SAP 등) 사용 능력 보유</p>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
     <footer class="mt-12 text-center flex justify-center flex-col md:flex-row mx-12">
       <p class="flex-col text-lg px-4 py-2 m-2 text-gray-400">Copyright &#169; 2022 MinyoungKim All rights reserved.</p>
     </footer>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
