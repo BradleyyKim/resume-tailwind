@@ -1,22 +1,31 @@
+// 프로필 이미지 변경
+function profileImgToggle() {
+  const slideImg = document.getElementById("slide");
+  let src = slideImg.src;
+  const origin = window.location.origin;
+  imgUrl = {
+    profile1: "/src/img/profile1.jpeg",
+    profile2: "/src/img/profile2.jpeg",
+  };
+
+  slideImg.addEventListener("click", (e) => {
+    if (src === e.target.src) {
+      e.target.src = origin + imgUrl.profile2;
+    } else if (src !== e.target.src) {
+      e.target.src = origin + imgUrl.profile1;
+    }
+  });
+}
+
+// 한영 번역 함수
 const toggleLangs = () => {
   const tealToggle = document.getElementById("teal-toggle");
   const toggleText = document.querySelector(".toggleText");
-  const toggleTags = document.querySelectorAll(".allToggles");
   const containerKorean = document.getElementById("containerKorean");
   const containerEnglish = document.getElementById("containerEnglish");
 
-  // const profileKorean = document.getElementById("profileKorean");
-  // const profileEnglish = document.getElementById("profileEnglish");
-  // const nameKorean = document.getElementById("nameKorean");
-  // const nameEnglish = document.getElementById("nameEnglish");
-  // const contactKorean = document.getElementById("contactKorean");
-  // const contactEnglish = document.getElementById("contactEnglish");
-  // const projectKorean = document.getElementById("projectKorean");
-  // const projectEnglish = document.getElementById("projectEnglish");
-
   tealToggle.addEventListener("click", () => {
     let toggle = containerKorean.classList.contains("hidden");
-    console.log(toggle);
     if (toggle === false) {
       toggleText.textContent = "ENG";
       containerKorean.classList.add("hidden");
@@ -32,4 +41,5 @@ const toggleLangs = () => {
   });
 };
 
+profileImgToggle();
 toggleLangs();
