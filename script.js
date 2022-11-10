@@ -4,15 +4,16 @@ function profileImgToggle() {
   let src = slideImg.src;
   const origin = window.location.origin;
   imgUrl = {
-    profile1: "/src/img/profile1.jpeg",
-    profile2: "/src/img/profile2.jpeg",
+    profile1: "./src/img/profile1.jpeg",
+    profile2: "./src/img/profile2.jpeg",
   };
 
   slideImg.addEventListener("click", (e) => {
     if (src === e.target.src) {
-      e.target.src = origin + imgUrl.profile2;
+      console.log(e.target);
+      e.target.src = imgUrl.profile2;
     } else if (src !== e.target.src) {
-      e.target.src = origin + imgUrl.profile1;
+      e.target.src = imgUrl.profile1;
     }
   });
 }
